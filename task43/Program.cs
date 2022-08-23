@@ -10,7 +10,7 @@ string LineIntersection(int a1, int b1, int a2, int b2)
     {
         x = (double)(b2 - b1) / (a1 - a2);     //оказывается, если int делить на int, то получится int, а не double
         y = a1 * x + b1;
-        return ($"Прямые заданные уравнениями y={a1}*x+({b1}) и y={a2}*x+({b2}) пересекаются в точке ({Math.Round(x, 1, MidpointRounding.ToZero)};{y})");
+        return ($"Прямые заданные уравнениями y={a1}*x+({b1}) и y={a2}*x+({b2}) пересекаются в точке ({Math.Round(x, 1, MidpointRounding.ToZero)};{Math.Round(y, 1, MidpointRounding.ToZero)})");
     }
 
     else if (a1 == a2 && b1 != b2) return ($"Прямые заданные уравнениями y={a1}*x+({b1}) и y={a2}*x+({b2}) не пересекаются");
