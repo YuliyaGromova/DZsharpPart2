@@ -9,36 +9,35 @@
 int[,] SnailMatrix(int row)
 {
     int[,] snail = new int[row, row];
- 
+
     int count = 1;
-    int x = row-1;   
-    int y = 0;       
+    int x = row - 1;
+    int y = 0;
     while (count <= row * row)
     {
-        for (int j = y; j < x+1; j++)
+        for (int j = y; j < x + 1; j++)
         {
-            snail[y,j]=count;
+            snail[y, j] = count;
             count++;
         }
-        for (int i = y+1; i < x+1; i++)
+        for (int i = y + 1; i < x + 1; i++)
         {
-            snail[i,x]=count;
+            snail[i, x] = count;
             count++;
         }
-        for (int j = x-1; j >= y; j--)
+        for (int j = x - 1; j >= y; j--)
         {
-            snail[x,j]=count;
-            count+=1;
+            snail[x, j] = count;
+            count += 1;
         }
-        for (int i = x-1; i >=y+1; i--)
+        for (int i = x - 1; i >= y + 1; i--)
         {
-            snail[i,y]=count;
+            snail[i, y] = count;
             count++;
         }
-        x-=1;
-        y+=1;
+        x -= 1;
+        y += 1;
     }
-
     return snail;
 }
 // печать двумерного массива
@@ -57,7 +56,12 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
+//код
 Console.Write("Введите количество строк (столбцов) квадратного двумерного массива: ");
 int row1 = Convert.ToInt32(Console.ReadLine());
-int[,] snail1 = SnailMatrix(row1);
-PrintMatrix(snail1);
+if (row1 > 0)
+{
+    int[,] snail1 = SnailMatrix(row1);
+    PrintMatrix(snail1);
+}
+else Console.WriteLine("Введены некорректные значения");
